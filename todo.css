@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+.main-header {
+    background: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #333;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.logo svg {
+    color: #74b9ff;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.feedback-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    color: #555;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.feedback-btn:hover {
+    background: #f8f9fa;
+    border-color: #74b9ff;
+    color: #74b9ff;
+}
+
+.profile-dropdown {
+    position: relative;
+}
+
+.profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.profile-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    min-width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+}
+
+.profile-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+    background: #f8f9fa;
+}
+
+.dropdown-content hr {
+    margin: 0.5rem 0;
+    border: none;
+    border-top: 1px solid #eee;
+}
+
+.logout-link {
+    color: #ff6b6b !important;
+}
+
+/* Main Content Styles */
+.container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #333;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #a29bfe, #74b9ff);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+#f {
+    background: #ffffff;
+    padding: 30px 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 1s ease-in-out;
+    margin-top: 30px;
+}
+
+#f h2 {
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#f h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #a29bfe, #74b9ff);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+#f label {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #555555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+#f input[type="text"],
+#f input[type="date"],
+#f textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #fafafa;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+#f input:focus,
+#f textarea:focus {
+    border: 1px solid #74b9ff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(116, 185, 255, 0.6);
+}
+
+#f textarea {
+    resize: none;
+    min-height: 80px;
+}
+
+#f button {
+    width: 100%;
+    background: linear-gradient(90deg, #74b9ff, #a29bfe);
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#f button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Todo List Styles */
+.todo-section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+h2 {
+    color: #333;
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 30px 0 15px 0;
+}
+
+h5 {
+    color: #666;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+#list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#list li {
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: 20px;
+}
+
+#list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+#list li h3 {
+    margin: 0;
+    color: #333;
+    font-size: 1.2rem;
+    flex: 2;
+}
+
+#list li p {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+    flex: 3;
+}
+
+#list li .date {
+    color: #74b9ff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    flex: 1;
+    text-align: center;
+}
+
+#list li button {
+    background: linear-gradient(90deg, #ff6b6b, #ff8787);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#list li button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+}
+
+#list li.completed {
+    opacity: 0.8;
+    background: #d3f4e6;
+}
+
+#list li.completed h3 {
+    text-decoration: line-through;
+    color: #888;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header {
+        padding: 1rem;
+    }
+
+    .logo span {
+        display: none;
+    }
+
+    .feedback-btn span {
+        display: none;
+    }
+
+    .profile-btn span {
+        display: none;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #f {
+        padding: 20px 25px;
+    }
+
+    #list li {
+        flex-direction: column;
+        padding: 15px 12px;
+    }
+
+    #list li h3,
+    #list li p,
+    #list li .date {
+        flex: none;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+    #list li button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
